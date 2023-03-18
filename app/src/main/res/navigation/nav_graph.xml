@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/DeviceHoldersFragment">
+
+    <fragment
+        android:id="@+id/DeviceHoldersFragment"
+        android:name="com.example.patronuschallenge.ui.DeviceHoldersFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_device_holders">
+
+        <action
+            android:id="@+id/to_DetailsFragment"
+            app:destination="@id/DetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetailsFragment"
+        android:name="com.example.patronuschallenge.ui.DetailsFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_details">
+
+        <action
+            android:id="@+id/to_DeviceHoldersFragment"
+            app:destination="@id/DeviceHoldersFragment" />
+    </fragment>
+</navigation>
