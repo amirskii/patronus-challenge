@@ -30,7 +30,7 @@ internal class DeviceHolderAdapter(
         LayoutInflater.from(parent.context)
             .let { ItemDeviceHolderBinding.inflate(it, parent, false) }
             .let {
-                DeviceHolderViewHolder(it)
+                DeviceHolderViewHolder(it, onItemClicked)
             }
 
     override fun onBindViewHolder(holder: DeviceHolderViewHolder, position: Int) {
@@ -38,7 +38,8 @@ internal class DeviceHolderAdapter(
     }
 
     internal class DeviceHolderViewHolder(
-        binding: ItemDeviceHolderBinding
+        binding: ItemDeviceHolderBinding,
+        private val onItemClicked: (DeviceHolderPm) -> Unit,
     ) : BaseViewHolder<DeviceHolderPm, ItemDeviceHolderBinding>(binding) {
 
         override fun bind(item: DeviceHolderPm, position: Int) {
@@ -56,6 +57,10 @@ internal class DeviceHolderAdapter(
 
                 famLabel.isVisible = item.showFam
                 banLabel.isVisible = item.showBan
+
+                root.setOnClickListener {
+                    onItemClicked(item)
+                }
             }
         }
     }

@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/DetailsFragment"
-        android:name="com.example.patronuschallenge.ui.DetailsFragment"
+        android:name="com.example.patronuschallenge.ui.details.DetailsFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_details">
 
