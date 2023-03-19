@@ -10,8 +10,7 @@ class DeviceHolderPmMapper(
 ) {
 
     fun map(input: DeviceHolder): DeviceHolderPm {
-        val placeholder = "${input.firstName.first()} ${input.lastName.first()}"
-            .takeIf { input.imageUrl == null } ?: ""
+        val placeholder = "${input.firstName.first()}${input.lastName.first()}"
 
         return DeviceHolderPm(
             id = input.id,

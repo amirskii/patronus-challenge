@@ -7,20 +7,19 @@
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground">
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/user_image"
         android:layout_width="@dimen/avatar_size"
         android:layout_height="@dimen/avatar_size"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:background="@color/place_holder_gray"
+        android:background="@drawable/sh_round"
         app:layout_constraintEnd_toStartOf="@id/user_name"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription"
-        app:shapeAppearance="@style/RoundedCornerShape" />
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/placeholder_text_view"

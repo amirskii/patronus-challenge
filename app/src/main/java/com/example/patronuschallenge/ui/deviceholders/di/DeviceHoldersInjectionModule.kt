@@ -19,7 +19,7 @@ object DeviceHoldersInjectionModule {
         }
 
         factory<FetchDeviceHoldersUseCase> {
-            FetchDeviceHoldersUseCaseImpl()
+            FetchDeviceHoldersUseCaseImpl(get())
         }
 
         single { DeviceHolderPmMapper(get()) }

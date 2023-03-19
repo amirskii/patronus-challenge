@@ -5,15 +5,14 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import coil.load
 import com.example.patronuschallenge.databinding.ItemDeviceHolderBinding
 import com.example.patronuschallenge.ui.base.BaseViewHolder
 import com.example.patronuschallenge.ui.model.DeviceHolderPm
+import com.example.patronuschallenge.utils.extensions.loadRoundImage
 
 internal class DeviceHolderAdapter(
     private val onItemClicked: (DeviceHolderPm) -> Unit
-)
- : ListAdapter<DeviceHolderPm, DeviceHolderAdapter.DeviceHolderViewHolder>(
+) : ListAdapter<DeviceHolderPm, DeviceHolderAdapter.DeviceHolderViewHolder>(
     DiffCallback
 ) {
 
@@ -47,11 +46,14 @@ internal class DeviceHolderAdapter(
                 userName.text = item.name
                 userSex.text = item.gender
                 userPhone.text = item.phoneNumber
-                if (item.imageUrl.isEmpty()) {
+
+                placeholderTextView.isVisible = item.imageUrl.isEmpty()
+                placeholderTextView.text = item.imagePlaceholder
+                userImage.loadRoundImage(item.imageUrl, onError = {
+                    placeholderTextView.isVisible = true
                     placeholderTextView.text = item.imagePlaceholder
-                } else {
-                    userImage.load(item.imageUrl)
-                }
+                })
+
                 famLabel.isVisible = item.showFam
                 banLabel.isVisible = item.showBan
             }
