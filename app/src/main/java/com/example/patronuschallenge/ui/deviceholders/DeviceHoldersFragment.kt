@@ -2,15 +2,13 @@ package com.example.patronuschallenge.ui.deviceholders
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.patronuschallenge.R
 import com.example.patronuschallenge.databinding.FragmentDeviceHoldersBinding
 import com.example.patronuschallenge.ui.base.BaseFragment
 import com.example.patronuschallenge.ui.deviceholders.adapter.DeviceHolderAdapter
+import com.example.patronuschallenge.utils.UiUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DeviceHoldersFragment : BaseFragment<FragmentDeviceHoldersBinding>(
@@ -34,10 +32,8 @@ class DeviceHoldersFragment : BaseFragment<FragmentDeviceHoldersBinding>(
     private fun setupUi() {
         with(binding) {
             deviceHoldersRecyclerView.adapter = adapter
-            deviceHoldersRecyclerView.addItemDecoration( // TODO: custom drawable
-                DividerItemDecoration(
-                    requireContext(), LinearLayoutManager.VERTICAL
-                )
+            deviceHoldersRecyclerView.addItemDecoration(
+                UiUtils.getDividerIconDecoration(requireContext())
             )
         }
     }

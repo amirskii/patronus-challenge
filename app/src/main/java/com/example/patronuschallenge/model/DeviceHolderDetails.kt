@@ -9,5 +9,6 @@ data class DeviceHolderDetails(
     val imageUrl: String?,
     val currentLatitude: Double,
     val currentLongitude: Double,
+    val address: CustomerAddress,
     val stickers: List<String>
 )

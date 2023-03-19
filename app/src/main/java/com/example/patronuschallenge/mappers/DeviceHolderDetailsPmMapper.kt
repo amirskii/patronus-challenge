@@ -20,7 +20,10 @@ class DeviceHolderDetailsPmMapper(
             imageUrl = input.imageUrl ?: "",
             imagePlaceholder = placeholder,
             showFam = input.stickers.contains(context.getString(R.string.fam)),
-            showBan = input.stickers.contains(context.getString(R.string.ban))
+            showBan = input.stickers.contains(context.getString(R.string.ban)),
+            address = "${input.address.street}, ${input.address.zip} ${input.address.city}",
+            lat = input.currentLatitude,
+            lon = input.currentLongitude
         )
     }
 }
