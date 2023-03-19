@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.patronuschallenge.R
 import com.example.patronuschallenge.databinding.FragmentDetailsBinding
 import com.example.patronuschallenge.ui.base.BaseFragment
@@ -15,10 +16,17 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBinding::inflate) {
 
-    private val viewModel by viewModel<DetailsViewModelImpl>()
+    private val args by navArgs<DetailsFragmentArgs>()
+
+    private val viewModel by viewModel<DetailsViewModelImpl> {
+        parametersOf(
+            args.customerId
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

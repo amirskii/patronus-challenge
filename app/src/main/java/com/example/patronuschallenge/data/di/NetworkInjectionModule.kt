@@ -4,6 +4,7 @@ import com.example.patronuschallenge.data.api.PatronusApi
 import com.example.patronuschallenge.data.gateway.PatronusGateway
 import com.example.patronuschallenge.data.gateway.PatronusRemoteGateway
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,8 +19,14 @@ object NetworkInjectionModule {
             GsonConverterFactory.create()
         }
 
+        factory<HttpLoggingInterceptor> {
+            HttpLoggingInterceptor()
+                .setLevel(HttpLoggingInterceptor.Level.BODY)
+        }
+
         factory<OkHttpClient> {
             OkHttpClient.Builder()
+                .addInterceptor(get<HttpLoggingInterceptor>())
                 .build()
         }
 

@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class DetailsViewModelImpl(
+    customerId: Int,
     private val fetchDeviceHolderDetailsUseCase: FetchDeviceHolderDetailsUseCase,
     private val detailsPmMapper: DeviceHolderDetailsPmMapper
 ) : DeviceHoldersViewModel, ViewModel() {
@@ -19,18 +20,18 @@ class DetailsViewModelImpl(
     override val uiState = MutableStateFlow(DetailsUiState())
 
     init {
-        fetchDeviceHolders()
+        fetchDeviceHolders(customerId)
     }
 
 
-    private fun fetchDeviceHolders() {
+    private fun fetchDeviceHolders(customerId: Int) {
         uiState.update { state ->
             state.copy(
                 loading = true
             )
         }
         viewModelScope.launch {
-            fetchDeviceHolderDetailsUseCase.execute()
+            fetchDeviceHolderDetailsUseCase.execute(customerId)
                 .catch {
                     uiState.update { state -> state.copy(error = it.localizedMessage) }
                 }

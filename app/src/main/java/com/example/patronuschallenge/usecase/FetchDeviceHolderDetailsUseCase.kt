@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface FetchDeviceHolderDetailsUseCase {
 
-    suspend fun execute(): Flow<DeviceHolderDetails>
+    suspend fun execute(id: Int): Flow<DeviceHolderDetails>
 }

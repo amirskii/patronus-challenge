@@ -6,6 +6,7 @@ import kotlinx.coroutines.launch
 
 interface DeviceHoldersViewModel {
     val uiState: Flow<DeviceHoldersUiState>
+    fun fetchDeviceHolders()
 }
 
 data class DeviceHoldersUiState(

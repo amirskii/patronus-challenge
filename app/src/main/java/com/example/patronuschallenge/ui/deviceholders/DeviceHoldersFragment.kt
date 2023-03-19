@@ -18,7 +18,7 @@ class DeviceHoldersFragment : BaseFragment<FragmentDeviceHoldersBinding>(
 
     private val adapter by lazy {
         DeviceHolderAdapter {
-            findNavController().navigate(R.id.to_DetailsFragment)
+            findNavController().navigate(DeviceHoldersFragmentDirections.toDetailsFragment(it.id))
         }
     }
 
@@ -35,12 +35,17 @@ class DeviceHoldersFragment : BaseFragment<FragmentDeviceHoldersBinding>(
             deviceHoldersRecyclerView.addItemDecoration(
                 UiUtils.getDividerIconDecoration(requireContext())
             )
+            swipeRefreshLayout.setOnRefreshListener {
+                viewModel.fetchDeviceHolders()
+            }
         }
     }
 
     private fun observe() {
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { state ->
+                binding.swipeRefreshLayout.isRefreshing = state.loading
+
                 state.deviceHolders?.let {
                     adapter.submitList(it)
                 }

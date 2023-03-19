@@ -31,7 +31,7 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="@dimen/margin2x"
+            android:layout_marginHorizontal="@dimen/margin2x"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +92,8 @@
             android:id="@+id/ban_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/margin1x2"
+            android:layout_marginTop="@dimen/margin1x"
             android:background="@drawable/red_label_background"
             android:paddingHorizontal="4dp"
             android:paddingVertical="2dp"
@@ -100,7 +101,16 @@
             android:textColor="@color/red"
             android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@id/fam_label"
-            app:layout_constraintTop_toTopOf="@+id/fam_label" />
+            app:layout_constraintTop_toBottomOf="@+id/user_name"
+            app:layout_goneMarginStart="0dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierAllowsGoneWidgets="true"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="fam_label,ban_label" />
 
         <TextView
             android:id="@+id/user_gender"
@@ -111,7 +121,7 @@
             android:textColor="@color/light_gray"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fam_label"
+            app:layout_constraintTop_toBottomOf="@+id/barrier"
             app:layout_goneMarginStart="0dp"
             tools:text="Female" />
 

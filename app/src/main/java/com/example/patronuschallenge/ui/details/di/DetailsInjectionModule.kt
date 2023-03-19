@@ -11,8 +11,9 @@ object DetailsInjectionModule {
 
     val module = module {
 
-        viewModel {
+        viewModel { (customerId: Int) ->
             DetailsViewModelImpl(
+                customerId = customerId,
                 fetchDeviceHolderDetailsUseCase = get(),
                 detailsPmMapper = get()
             )

@@ -23,7 +23,7 @@ class DeviceHoldersViewModelImpl(
     }
 
 
-    private fun fetchDeviceHolders() {
+    override fun fetchDeviceHolders() {
         uiState.update { state ->
             state.copy(
                 loading = true

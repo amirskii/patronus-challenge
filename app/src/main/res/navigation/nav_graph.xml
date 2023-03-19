@@ -22,6 +22,11 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_details">
 
+        <argument
+            android:name="customerId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
         <action
             android:id="@+id/to_DeviceHoldersFragment"
             app:destination="@id/DeviceHoldersFragment" />
