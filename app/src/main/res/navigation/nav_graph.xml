@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/DeviceHoldersFragment"
-        android:name="com.example.patronuschallenge.ui.DeviceHoldersFragment"
+        android:name="com.example.patronuschallenge.ui.deviceholders.DeviceHoldersFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_device_holders">
 
