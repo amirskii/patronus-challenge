@@ -8,7 +8,7 @@ Following technologies have been used:
 5. Viewmodel, Use Case, Data transformation, Gateway layers covered with Unit-tests
 
 ### Note
-Could not export mask for map overlay. There was a figma error.
+Could not export mask for map overlay. There was a figma error. Used circle instead.
 
 ## Screenshots
 
