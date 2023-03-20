@@ -1,7 +1,7 @@
-package com.example.patronuschallenge.ui.deviceholders.di
+package com.example.patronuschallenge.features.deviceholders.di
 
 import com.example.patronuschallenge.mappers.DeviceHolderPmMapper
-import com.example.patronuschallenge.ui.deviceholders.DeviceHoldersViewModelImpl
+import com.example.patronuschallenge.features.deviceholders.DeviceHoldersViewModelImpl
 import com.example.patronuschallenge.usecase.FetchDeviceHoldersUseCase
 import com.example.patronuschallenge.usecase.FetchDeviceHoldersUseCaseImpl
 import org.koin.androidx.viewmodel.dsl.viewModel

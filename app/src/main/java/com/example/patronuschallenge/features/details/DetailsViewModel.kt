@@ -1,6 +1,6 @@
-package com.example.patronuschallenge.ui.details
+package com.example.patronuschallenge.features.details
 
-import com.example.patronuschallenge.ui.model.DeviceHolderDetailsPm
+import com.example.patronuschallenge.features.model.DeviceHolderDetailsPm
 import kotlinx.coroutines.flow.Flow
 
 interface DeviceHoldersViewModel {

@@ -1,4 +1,4 @@
-package com.example.patronuschallenge.ui
+package com.example.patronuschallenge.features
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

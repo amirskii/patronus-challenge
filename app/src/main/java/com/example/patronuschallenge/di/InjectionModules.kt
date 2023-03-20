@@ -1,8 +1,8 @@
 package com.example.patronuschallenge.di
 
 import com.example.patronuschallenge.data.di.NetworkInjectionModule
-import com.example.patronuschallenge.ui.details.di.DetailsInjectionModule
-import com.example.patronuschallenge.ui.deviceholders.di.DeviceHoldersInjectionModule
+import com.example.patronuschallenge.features.details.di.DetailsInjectionModule
+import com.example.patronuschallenge.features.deviceholders.di.DeviceHoldersInjectionModule
 
 
 object InjectionModules {

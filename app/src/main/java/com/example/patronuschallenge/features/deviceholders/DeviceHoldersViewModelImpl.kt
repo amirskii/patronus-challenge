@@ -1,4 +1,4 @@
-package com.example.patronuschallenge.ui.deviceholders
+package com.example.patronuschallenge.features.deviceholders
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

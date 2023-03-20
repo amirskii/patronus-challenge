@@ -1,13 +1,12 @@
-package com.example.patronuschallenge.ui.deviceholders
+package com.example.patronuschallenge.features.deviceholders
 
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.patronuschallenge.R
 import com.example.patronuschallenge.databinding.FragmentDeviceHoldersBinding
-import com.example.patronuschallenge.ui.base.BaseFragment
-import com.example.patronuschallenge.ui.deviceholders.adapter.DeviceHolderAdapter
+import com.example.patronuschallenge.features.base.BaseFragment
+import com.example.patronuschallenge.features.deviceholders.adapter.DeviceHolderAdapter
 import com.example.patronuschallenge.utils.UiUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

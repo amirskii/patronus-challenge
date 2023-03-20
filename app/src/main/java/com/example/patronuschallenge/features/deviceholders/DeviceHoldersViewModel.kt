@@ -1,8 +1,7 @@
-package com.example.patronuschallenge.ui.deviceholders
+package com.example.patronuschallenge.features.deviceholders
 
-import com.example.patronuschallenge.ui.model.DeviceHolderPm
+import com.example.patronuschallenge.features.model.DeviceHolderPm
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.launch
 
 interface DeviceHoldersViewModel {
     val uiState: Flow<DeviceHoldersUiState>

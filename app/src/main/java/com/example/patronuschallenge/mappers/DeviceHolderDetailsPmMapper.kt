@@ -3,7 +3,7 @@ package com.example.patronuschallenge.mappers
 import android.content.Context
 import com.example.patronuschallenge.R
 import com.example.patronuschallenge.model.DeviceHolderDetails
-import com.example.patronuschallenge.ui.model.DeviceHolderDetailsPm
+import com.example.patronuschallenge.features.model.DeviceHolderDetailsPm
 
 class DeviceHolderDetailsPmMapper(
     private val context: Context

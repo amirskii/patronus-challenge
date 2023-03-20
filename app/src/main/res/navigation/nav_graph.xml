@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/DeviceHoldersFragment"
-        android:name="com.example.patronuschallenge.ui.deviceholders.DeviceHoldersFragment"
+        android:name="com.example.patronuschallenge.features.deviceholders.DeviceHoldersFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_device_holders">
 
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/DetailsFragment"
-        android:name="com.example.patronuschallenge.ui.details.DetailsFragment"
+        android:name="com.example.patronuschallenge.features.details.DetailsFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_details">
 
