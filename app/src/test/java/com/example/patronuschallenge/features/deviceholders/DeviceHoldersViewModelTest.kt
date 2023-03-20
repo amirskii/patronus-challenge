@@ -54,19 +54,20 @@ class DeviceHoldersViewModelTest : BaseViewModelTest() {
             }
         }
 
-        @Test
-        fun `on init should change state from loading`() =
-            runTest {
-                val results = mutableListOf<DeviceHoldersUiState>()
-                setupMocks(listOf(customerPm))
+    @Test
+    fun `on init should change state from loading`() =
+        runTest {
+            val results = mutableListOf<DeviceHoldersUiState>()
+            setupMocks(listOf(customerPm))
 
-                backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
-                    viewModel.uiState.toList(results)
-                }
-                fetchDeviceHoldersUseCase.emit(listOf(customer))
-
-                results.first().shouldBe(DeviceHoldersUiState().copy(loading = true))
+            backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+                viewModel.uiState.toList(results)
             }
+            fetchDeviceHoldersUseCase.emit(listOf(customer))
+
+            results.first()
+                .shouldBe(DeviceHoldersUiState().copy(loading = true))
+        }
 
     @Test
     fun `on init should change state to success`() =
@@ -79,13 +80,17 @@ class DeviceHoldersViewModelTest : BaseViewModelTest() {
             }
             fetchDeviceHoldersUseCase.emit(listOf(customer))
 
-            results.last().shouldBe(DeviceHoldersUiState().copy(deviceHolders = listOf(customerPm)))
+            results.last()
+                .shouldBe(DeviceHoldersUiState().copy(deviceHolders = listOf(customerPm)))
         }
 
     internal class FakeFetchDeviceHoldersUseCase : FetchDeviceHoldersUseCase {
         private val flow = MutableSharedFlow<List<DeviceHolder>>()
-        suspend fun emit(value: List<DeviceHolder>) = flow.emit(value)
-        override suspend fun execute(): Flow<List<DeviceHolder>> = flow
+        suspend fun emit(value: List<DeviceHolder>) =
+            flow.emit(value)
+
+        override suspend fun execute(): Flow<List<DeviceHolder>> =
+            flow
     }
 
     private fun setupMocks(
@@ -95,7 +100,7 @@ class DeviceHoldersViewModelTest : BaseViewModelTest() {
             deviceHolderPmMapper.mapList(any())
         } returns result
     }
-    
+
     private val customerPm = DeviceHolderPm(
         id = 1,
         imageUrl = "imageUrl",
