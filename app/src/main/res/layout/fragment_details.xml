@@ -26,30 +26,26 @@
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize">
 
-        <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
-            android:id="@+id/frm_mask_animated"
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/margin2x"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:porterduffxfermode="DST_IN"
-            app:mask="@drawable/sh_round">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fcv_map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="@dimen/margin2x"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+        <com.example.patronuschallenge.utils.FocusView
+            android:id="@+id/frm_mask_animated"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fcv_map"
+            app:layout_constraintEnd_toEndOf="@+id/fcv_map"
+            app:layout_constraintStart_toStartOf="@+id/fcv_map"
+            app:layout_constraintTop_toTopOf="@+id/fcv_map" />
 
         <ImageView
             android:id="@+id/user_image"
