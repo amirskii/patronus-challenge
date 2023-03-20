@@ -1,4 +1,4 @@
-package com.example.patronuschallenge.ui.details
+package com.example.patronuschallenge.features.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

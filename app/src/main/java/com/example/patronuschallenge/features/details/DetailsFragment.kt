@@ -1,4 +1,4 @@
-package com.example.patronuschallenge.ui.details
+package com.example.patronuschallenge.features.details
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.patronuschallenge.R
 import com.example.patronuschallenge.databinding.FragmentDetailsBinding
-import com.example.patronuschallenge.ui.base.BaseFragment
+import com.example.patronuschallenge.features.base.BaseFragment
 import com.example.patronuschallenge.utils.extensions.loadRoundImage
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.SupportMapFragment

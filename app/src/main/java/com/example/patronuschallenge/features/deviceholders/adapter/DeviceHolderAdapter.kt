@@ -1,4 +1,4 @@
-package com.example.patronuschallenge.ui.deviceholders.adapter
+package com.example.patronuschallenge.features.deviceholders.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,8 +6,8 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.patronuschallenge.databinding.ItemDeviceHolderBinding
-import com.example.patronuschallenge.ui.base.BaseViewHolder
-import com.example.patronuschallenge.ui.model.DeviceHolderPm
+import com.example.patronuschallenge.features.base.BaseViewHolder
+import com.example.patronuschallenge.features.model.DeviceHolderPm
 import com.example.patronuschallenge.utils.extensions.loadRoundImage
 
 internal class DeviceHolderAdapter(

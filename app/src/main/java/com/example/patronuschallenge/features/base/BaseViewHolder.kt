@@ -1,4 +1,4 @@
-package com.example.patronuschallenge.ui.base
+package com.example.patronuschallenge.features.base
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
