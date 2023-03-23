@@ -63,6 +63,8 @@ class DetailsViewModelTest : BaseViewModelTest() {
             val results = mutableListOf<DetailsUiState>()
             setupMocks(customerDetailsPm)
 
+            // in this case flow is infinite toList won't work
+            // collecting coroutine that will continuously receive the values from use case
             backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
                 viewModel.uiState.toList(results)
             }

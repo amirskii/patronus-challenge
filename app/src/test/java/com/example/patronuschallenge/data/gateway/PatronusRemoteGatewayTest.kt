@@ -2,14 +2,12 @@ package com.example.patronuschallenge.data.gateway
 
 import com.example.patronuschallenge.base.BaseViewModelTest
 import com.example.patronuschallenge.data.api.PatronusApi
-import com.example.patronuschallenge.data.gateway.PatronusGateway
 import com.example.patronuschallenge.model.DeviceHolder
 import io.kotest.matchers.shouldBe
 import io.mockk.coEvery
 import io.mockk.coVerifySequence
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 

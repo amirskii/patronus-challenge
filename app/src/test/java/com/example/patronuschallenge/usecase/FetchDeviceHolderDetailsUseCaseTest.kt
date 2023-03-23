@@ -22,7 +22,7 @@ class FetchDeviceHolderDetailsUseCaseTest : BaseViewModelTest() {
                 coEvery { patronusGateway.getUserDetails(any()) } returns
                         mockk()
             }
-
+            // .toList() works here cause data stream is finite
             interactor.execute(1)
                 .toList()
 
